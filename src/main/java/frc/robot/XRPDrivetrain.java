@@ -7,7 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.xrp.XRPMotor;
-import frc.robot.Hardware.Motors;
+import frc.robot.io.hdw_io;
 
 public class XRPDrivetrain {
   private static final double kGearRatio =
@@ -18,13 +18,13 @@ public class XRPDrivetrain {
 
   // The XRP has the left and right motors set to
   // channels 0 and 1 respectively
-  private final XRPMotor m_leftMotor = Motors.motorLeft;
-  private final XRPMotor m_rightMotor = Motors.motorRight;
+  private final XRPMotor m_leftMotor = hdw_io.motorLeft;
+  private final XRPMotor m_rightMotor = hdw_io.motorRight;
 
   // The XRP has onboard encoders that are hardcoded
   // to use DIO pins 4/5 and 6/7 for the left and right
-  private final Encoder m_leftEncoder = Motors.encoderLeft;
-  private final Encoder m_rightEncoder = Motors.encoderRight;
+  private final Encoder m_leftEncoder = hdw_io.encoderLeft;
+  private final Encoder m_rightEncoder = hdw_io.encoderRight;
 
   // Set up the differential drive controller
   private final DifferentialDrive m_diffDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
